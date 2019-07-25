@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: install build dependencies
+          command: sudo apt-get update && sudo apt-get install -y quilt parted realpath qemu-user-static debootstrap zerofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils file git curl
+      - run:
+          name: build
+          command: sudo ./build-docker.sh
+      - store_artifacts:
+          path: deploy
+
