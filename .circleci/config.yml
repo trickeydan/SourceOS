@@ -6,10 +6,10 @@ jobs:
       - checkout
       - run:
           name: install build dependencies
-          command: sudo apt-get update && sudo apt-get install -y quilt parted realpath qemu-user-static debootstrap zerofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils file git curl
+          command: sudo apt-get update && sudo apt-get install -y coreutils quilt parted realpath qemu-user-static debootstrap zerofree pxz zip dosfstools bsdtar libcap2-bin grep rsync xz-utils file git curl
       - run:
           name: build
-          command: sudo ./build-docker.sh
+          command: sudo ./build.sh
       - store_artifacts:
           path: deploy
 
