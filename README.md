@@ -1,7 +1,6 @@
-# pi-gen
+# SourceOS
 
-_Tool used to create the raspberrypi.org Raspbian images_
-
+Operating system used by SourceBots. Based on the tools use to generate the raspberrypi.org Raspbian images (pi-gen).
 
 ## Dependencies
 
@@ -29,7 +28,7 @@ environment variables.
 
 The following environment variables are supported:
 
- * `IMG_NAME` **required** (Default: unset)
+ * `IMG_NAME` **required** (Default: SourceOS)
 
    The name of the image to build with the current stage directories.  Setting
    `IMG_NAME=Raspbian` is logical for an unmodified RPi-Distro/pi-gen build,
@@ -69,7 +68,7 @@ The following environment variables are supported:
 
    Output directory for target system images and NOOBS bundles.
 
- * `DEPLOY_ZIP` (Default: `1`)
+ * `DEPLOY_ZIP` (Default: `0`)
 
    Setting to `0` will deploy the actual image (`.img`) instead of a zipped image (`.zip`).
 
@@ -82,7 +81,7 @@ The following environment variables are supported:
 
    Username for the first user
 
- * `FIRST_USER_PASS` (Default: "raspberry")
+ * `FIRST_USER_PASS` (Default: "beeeeees")
 
    Password for the first user
 
@@ -90,27 +89,13 @@ The following environment variables are supported:
 
    If these are set, they are use to configure `wpa_supplicant.conf`, so that the raspberry pi can automatically connect to a wifi network on first boot.
 
- * `ENABLE_SSH` (Default: `0`)
+ * `ENABLE_SSH` (Default: `1`)
 
    Setting to `1` will enable ssh server for remote log in. Note that if you are using a common password such as the defaults there is a high risk of attackers taking over you RaspberryPi.
 
  * `STAGE_LIST` (Default: `stage*`)
 
     If set, then instead of working through the numeric stages in order, this list will be followed. For example setting to `"stage0 stage1 mystage stage2"` will run the contents of `mystage` before stage2. Note that quotes are needed around the list. An absolute or relative path can be given for stages outside the pi-gen directory.
-
-A simple example for building Raspbian:
-
-```bash
-IMG_NAME='Raspbian'
-```
-
-The config file can also be specified on the command line as an argument the `build.sh` or `build-docker.sh` scripts.
-
-```
-./build.sh -c myconfig
-```
-
-This is parsed after `config` so can be used to override values set there.
 
 ## How the build process works
 
@@ -240,6 +225,11 @@ maintenance and allows for more easy customization.
    pi-gen.  These are understandable for Raspbian's target audience, but if
    you were looking for something between truly minimal and Raspbian-Lite,
    here's where you start trimming.
+
+ - **Stage SB** - SourceOS addons.
+
+
+### Not used for SourceOS
 
  - **Stage 3** - desktop system.  Here's where you get the full desktop system
    with X11 and LXDE, web browsers, git for development, Raspbian custom UI
