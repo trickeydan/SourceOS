@@ -2,3 +2,4 @@ IMG_NAME=SourceOS
 DEPLOY_ZIP=0
 FIRST_USER_PASS=beeeeees
 ENABLE_SSH=1
+STAGE_LIST="stage0 stage1 stage2 stagesb"
