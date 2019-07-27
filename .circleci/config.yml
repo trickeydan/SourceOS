@@ -5,9 +5,23 @@ jobs:
       image: ubuntu-1604:201903-01
     steps:
       - checkout
+      - run: git submodule update --init
+      - run:
+          name: install-build-deps
+          command: sudo apt install build-essential devscripts debhelper dh-systemd
+      - run:
+          name: build-runusb
+          command: cd packages/runusb && sudo debuild -uc -us
+      - run:
+          name: build-usbmount
+          command: cd packages/usbmount && sudo dpkg-buildpackage -us -uc -b
+      - run: mkdir packages/built && mv packages/*.deb packages/built
       - run:
           name: build
           command: sudo ./build-docker.sh
       - store_artifacts:
           path: deploy
-
+          destination: image
+      - store_artifacts:
+          path: packages/built
+          destination: debian
