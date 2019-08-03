@@ -1,1 +1,2 @@
-pip3 install sbot==0.2.0 numpy scipy
+apt install -y libatlas-base-dev python3-numpy
+pip3 install sbot scipy
