@@ -2,5 +2,5 @@
 
 for package in /home/pi/*.deb;
 do
-	apt install package
+	apt install $package
 done
