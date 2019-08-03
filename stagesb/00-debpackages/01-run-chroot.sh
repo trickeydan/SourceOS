@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 
-for package in /home/pi/*.deb;
-do
-	apt install package
-done
+apt install -y /home/pi/usbmount*.deb
+apt install -y /home/pi/runusb*.deb
