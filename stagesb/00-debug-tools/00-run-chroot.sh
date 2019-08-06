@@ -6,3 +6,10 @@ cat >>/boot/config.txt <<EOF
 # Enable the serial console on pins 8 and 10.
 enable_uart=1
 EOF
+
+cat >>/etc/network/interfaces <<EOF
+# Bring up interface with link local address
+# As DHCPCD is disabled, we can disregard the above warning
+allow-hotplug eth0
+iface eth0 inet manual
+EOF
