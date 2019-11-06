@@ -8,7 +8,7 @@ jobs:
       - run: git submodule update --init
       - run:
           name: install-build-deps
-          command: sudo apt install build-essential devscripts debhelper dh-systemd
+          command: sudo apt update && sudo apt install build-essential devscripts debhelper dh-systemd
       - run:
           name: build-runusb
           command: cd packages/runusb && sudo debuild -uc -us
