@@ -1,1 +1,1 @@
-mv /pi-gen/packages/built/*.deb /pi-gen/work/*-SourceOS/stagesb/rootfs/home/pi
+mv $BASE_DIR/packages/built/*.deb $BASE_DIR/work/*-SourceOS/stagesb/rootfs/home/pi
