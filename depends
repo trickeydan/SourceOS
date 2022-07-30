@@ -17,3 +17,7 @@ file
 git
 lsmod:kmod
 bc
+build-essential
+devscripts
+debhelper
+dh-systemd

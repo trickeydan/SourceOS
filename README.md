@@ -9,11 +9,12 @@ either Debian Buster or Ubuntu Xenial and is known to have issues building on
 earlier releases of these systems. On other Linux distributions it may be possible
 to use the Docker build described below.
 
-To install the required dependencies for pi-gen you should run:
+To install the required dependencies for SourceOS pi-gen you should run:
 
 ```bash
 apt-get install coreutils quilt parted qemu-user-static debootstrap zerofree zip \
-dosfstools bsdtar libcap2-bin grep rsync xz-utils file git curl bc
+dosfstools bsdtar libcap2-bin grep rsync xz-utils file git curl bc \
+build-essential devscripts debhelper dh-systemd
 ```
 
 The file `depends` contains a list of tools needed.  The format of this
