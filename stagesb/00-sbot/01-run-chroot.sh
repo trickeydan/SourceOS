@@ -7,4 +7,5 @@ pyserial==3.5 \
 pyusb==1.2.1 \
 sbot==0.9.0 \
 typing-extensions==4.1.1 \
+opencv-contrib-python-headless==4.5.5.62 \
 zoloto==0.7.1
