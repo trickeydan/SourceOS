@@ -5,3 +5,5 @@ postrun.sh
 *-pc
 apt-cacher-ng/
 packages/built/*.deb
+packages/runusb_*
+packages/usbmount_*
