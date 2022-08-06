@@ -8,4 +8,5 @@ pyusb==1.2.1 \
 sbot==0.9.0 \
 typing-extensions==4.1.1 \
 opencv-contrib-python-headless==4.4.0.46 \
-zoloto==0.7.1
+zoloto==0.8.0
+j5-zoloto===0.2.0 \
