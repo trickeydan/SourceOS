@@ -1,1 +1,7 @@
-mv /pi-gen/packages/built/*.deb /pi-gen/work/*-SourceOS/stagesb/rootfs/home/pi
+cd $BASE_DIR/packages/runusb
+debuild -uc -us
+
+cd $BASE_DIR/packages/usbmount
+dpkg-buildpackage -us -uc -b
+
+mv $BASE_DIR/packages/*.deb $BASE_DIR/work/*-SourceOS/stagesb/rootfs/home/pi
